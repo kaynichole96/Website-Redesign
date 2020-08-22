@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<style>
+  body, html {
+    height: 100%;
+  }
+
+  .parallax {
+  /* The image used */
+  background-image: url('mac.jpeg');
+
+  /* Full height */
+  height: 100%;
+
+  /* Create the parallax scrolling effect */
+  display: inline-block;
+   width: 100%;
+   font-size: 0;
+   line-height: 0;
+   vertical-align: middle;
+   background-size: 100%;
+   background-position: 50% 50%;
+   background-repeat: no-repeat;
+   background-image: url(mac.jpeg);
+}
+
+  body {
+  margin: 0;
+ font-family: "Times New Roman", Times, serif;
+  background-color:#e4decd;
+  font-size: 14px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: white; /*Sets the text hover color on navbar*/
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active >
+        a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    color: white; /*BACKGROUND color for active*/
+    background-color:#acb7ae;
+}
+
+.navbar-default {
+    background-color:#acb7ae;
+    border-color:#acb7ae;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: white; /*Change active text color here*/
+}
+
+
+nav,h1,h2,h3,h4 {
+  font-family: 'Poor Story', cursive;
+
+}
+
+.wrapper {
+  width: 100%;
+  padding: 0 2rem;
+  text-align: center;
+}
+.polaroid {
+  background: #fff;
+  padding: 1rem;
+  box-shadow: 0 0.2rem 1.2rem rgba(0,0,0,0.2);
+
+}
+.polaroid > img{
+  max-width: 100%;
+  height: auto;
+}
+.caption {
+  font-size: 1.8rem;
+  text-align: center;
+  line-height: 2em;
+}
+.item {
+  width: 30%;
+  display: inline-block;
+  margin-top: 2rem;
+  filter: grayscale(100%);
+}
+.item .polaroid:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  transition: all 0.35s;
+}
+.item:nth-of-type(4n+1) {
+  transform: scale(0.8, 0.8) rotate(5deg);
+  transition: all 0.35s;
+}
+.item:nth-of-type(4n+1) .polaroid:before {
+  transform: rotate(6deg);
+  height: 20%;
+  width: 47%;
+  bottom: 30px;
+  right: 12px;
+  box-shadow: 0 2.1rem 2rem rgba(0,0,0,0.4);
+}
+.item:nth-of-type(4n+2) {
+  transform: scale(0.8, 0.8) rotate(-5deg);
+  transition: all 0.35s;
+}
+.item:nth-of-type(4n+2) .polaroid:before {
+  transform: rotate(-6deg);
+  height: 20%;
+  width: 47%;
+  bottom: 30px;
+  left: 12px;
+  box-shadow: 0 2.1rem 2rem rgba(0,0,0,0.4);
+}
+.item:nth-of-type(4n+4) {
+  transform: scale(0.8, 0.8) rotate(3deg);
+  transition: all 0.35s;
+}
+.item:nth-of-type(4n+4) .polaroid:before {
+  transform: rotate(4deg);
+  height: 20%;
+  width: 47%;
+  bottom: 30px;
+  right: 12px;
+  box-shadow: 0 2.1rem 2rem rgba(0,0,0,0.3);
+}
+.item:nth-of-type(4n+3) {
+  transform: scale(0.8, 0.8) rotate(-3deg);
+  transition: all 0.35s;
+}
+.item:nth-of-type(4n+3) .polaroid:before {
+  transform: rotate(-4deg);
+  height: 20%;
+  width: 47%;
+  bottom: 30px;
+  left: 12px;
+  box-shadow: 0 2.1rem 2rem rgba(0,0,0,0.3);
+}
+.item:hover {
+  filter: none;
+  transform: scale(1, 1) rotate(0deg) !important;
+  transition: all 0.35s;
+}
+.item:hover .polaroid:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  transform: rotate(0deg);
+  height: 90%;
+  width: 90%;
+  bottom: 0%;
+  right: 5%;
+  transition: all 0.35s;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+  list-style: none;
+  }
+
+.flexcontainer {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: row;
+   flex-wrap: wrap;
+   padding:0 10px 10px 0;
+   margin: 0 -5px;
+   align-content: flex-end;
+}
+
+  .footer {
+     position:fixed;
+     left: 0;
+     bottom: 0;
+     width: 100%;
+     background-color:#acb7ae;
+     color: white;
+     text-align: center;
+  }
+
+  </style>
+
+  <body>
+
+   <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+      </div>
+      <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+        <li><a href="#About Me">About Me</a></li>
+        <li><a href="#Portfolio">Portfolio</a></li>
+        <li><a href="#Resume">Resume</a></li>
+        <li><a href="#Contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="parallax"></div>
+
+  <div style="height:1000px;background-color:#e4decd;font-size:20px">
+
+  <a name="About Me"></a>
+
+  <div class="wrapper">
+
+    <div class="item">
+
+      <div class="polaroid"><img src="kate.jpg">
+
+        <div class="caption">Me & Dolly</div>
+
+      </div>
+
+    </div>
+
+<div class="container">
+
+  <h2>About Me</h2>
+  <p>My name is Katelyn Neuhaus. I am 24 years old and grew up in Northeast Nebraska.
+  I am a 2020 graduate of Des Moines Area Community College with an Associates Degree in Web Development.
+  In my free time I enjoy listening to music, gaming and spending time with my 4 year-old Yorkie.
+  I am planning to relocate to the San Francisco Bay Area and am looking for an exciting opportunity as a front-end web developer.
+  I am open to both remote and onsite opportunities.</p>
+
+
+ <br><h3>I have experiance with.</h3></br>
+
+ <ul>
+   <li><img src="html.png" alt="HTML" width="80" height="80"><br>HTML 5</br></li>
+   <li><img src="css.png" alt="CSS" width="80" height="80"><br>CSS 3</br></li>
+   <li><img src="js.png" alt="JS" width="80" height="80"><br>Javascript</br></li>
+   <li><img src="php.png" alt="php" width="80" height="80"><br>PHP</br></li>
+
+ </ul>
+ </div>
+
+<div class="parallax"></div>
+
+<div class="Portfolio">
+<div style="height:1000px;background-color:#e4decd;font-size:20px">
+<a name="Portfolio"></a>
+
+   <br><center><h1>Portfolio</h1></br>
+
+<div class="flexcontainer">
+<div><a href="http://katelynneuhaus.info/HTML%20Project/Html%20Project/HtmlHome.html">
+<img border="0" alt="HTMLProject" src="yorkie.jpg" width="425" height="350">
+</a></div>
+
+<div><a href="http://katelynneuhaus.info/Javascript%20Project/recipe%20project/recipe.html">
+<img border="0" alt="RecipeProject" src="recipe.png" width="425" height="350">
+</a></div>
+
+<div><a href="http://katelynneuhaus.info/Photo%20Project/PhotoProject/homepage.html">
+<img border="0" alt="photography" src="foreverPhoto.png" width="425" height="350">
+</a></div>
+
+<div><a href="https://xd.adobe.com/view/757e6189-536a-4673-52f0-5c18471eaeff-034f/">
+<img border="0" alt="PizzaProject" src="pizza.jpg" width="425" height="350">
+</a></div>
+
+<div><a href="https://xd.adobe.com/view/f35ca380-aaee-44b4-58a8-807fd82d94a9-856d/">
+<img border="0" alt="GardenProject" src="garden.jpg" width="425" height="350">
+</a></div>
+
+<div><a href="http://katelynneuhaus.info/PayPal%20Donate.html">
+<img border="0" alt="Donate" src="http://katelynneuhaus.info/donate.png" width="425" height="350">
+</a></div>
+
+<div><a href="http://austinstoulil.com/wdv205/CssAssignments/fallproject.html">
+<img border="0" alt="TeamProject" src="Team.png" width="425" height="350">
+</a></div>
+
+<div><a href="http://katelynneuhaus.info/wordpress/">
+<img border="0" alt="Costa Rica Trip" src="http://katelynneuhaus.info/wordpress.png" width="425" height="350">
+</a></div>
+
+<div><a href="Emerging Trends Presentation.pptx">
+<img border="0" alt="powerpoint" src="http://katelynneuhaus.info/powerpoint.png" width="425" height="350">
+</a></div>
+
+</div>
+
+
+<div class="Resume">
+<div style="height:1000px;background-color:#e4decd;font-size:20px">
+<a name="Resume"></a>
+
+   <br><center><h1>Resume</br></center></h1>
+
+   <img src="Resume3.png" alt="Resume" width="900" height="800">
+
+
+</div>
+</div>
+
+<div class="Contact">
+<div style="height:1000px;background-color:#e4decd;font-size:20px">
+<a name="Contact"></a>
+
+   <br><center><h1>Contact</h1></br>
+  <p><h1></center> Contact Me!<br>
+
+          <br>Email: katelynneuhaus96@hotmail.com<br>
+        </br>Linkedin: <a href="https://www.linkedin.com/in/katelyn-neuhaus-68a7b3186/"><img src="linked.png" alt="Linkedin" style="width:42px;height:42px;"></a><br>
+
+ </p></h1></center>
+
+</div>
+</div>
+
+
+<div class="footer">
+  <p><a href="https://github.com/kaynichole96?tab=repositorie"><img src="github.png" alt="Get" style="width:42px;height:42px;"></a> <a href="https://www.linkedin.com/in/katelyn-neuhaus-68a7b3186/"><img src="linked.png" alt="Linkedin" style="width:42px;height:42px;"></a></p>
+</div>
+
+</body>
+</html>
